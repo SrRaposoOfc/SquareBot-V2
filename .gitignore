@@ -1,0 +1,31 @@
+deploy_uploads/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ambiente virtual
+venv/
+env/
+ENV/
+
+# Arquivos de backup
+*.bak
+*.tmp
+
+# Sistema de pagamento
+payments.json
+pixgg_keys.json 
