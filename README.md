@@ -2,6 +2,11 @@
 
 Um bot Discord avançado para gerenciamento de deploys na Square Cloud com sistema de pagamento PIX integrado.
 
+Convite do bot:
+```bash
+[Clique aqui!](https://discord.com/oauth2/authorize?client_id=1391958519510597783&permissions=8&integration_type=0&scope=bot)
+```
+
 ## 🚀 Funcionalidades
 
 ### 📦 **Sistema de Deploy Automático**
