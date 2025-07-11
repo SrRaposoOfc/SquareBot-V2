@@ -3,9 +3,14 @@
 Um bot Discord avançado para gerenciamento de deploys na Square Cloud com sistema de pagamento PIX integrado.
 
 Convite do bot:
+[SquareBot Invite](https://discord.com/oauth2/authorize?client_id=1391958519510597783&permissions=8&integration_type=0&scope=bot)
+
+ou então:
 ```bash
-[Clique aqui!](https://discord.com/oauth2/authorize?client_id=1391958519510597783&permissions=8&integration_type=0&scope=bot)
+https://discord.com/oauth2/authorize?client_id=1391958519510597783&permissions=8&integration_type=0&scope=bot
 ```
+
+Envie esse link num canal do seu server do discord e clique nele para adicionar o bot! 
 
 ## 🚀 Funcionalidades
 
