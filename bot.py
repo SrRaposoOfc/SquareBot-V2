@@ -6,7 +6,7 @@ import json
 import os
 from config import *
 import shutil
-import squarecloud as square
+import squarecloud
 import time
 import aiohttp
 import qrcode
@@ -99,7 +99,7 @@ def get_guild_ticket_category(guild_id):
         return category_id
     return None
 def get_client(api_key):
-    return square.Client(api_key)
+    return squarecloud.Client(api_key)
 async def list_apps(api_key):
     client = get_client(api_key)
     return await client.all_apps()
@@ -108,30 +108,30 @@ async def get_app_status(api_key, app_id):
     return await client.app_status(app_id=app_id)
 async def start_app(api_key, app_id):
     client = get_client(api_key)
-    return await client.app_start(app_id=app_id)
+    return await client.start_app(app_id=app_id)
 async def stop_app(api_key, app_id):
     client = get_client(api_key)
-    return await client.app_stop(app_id=app_id)
+    return await client.stop_app(app_id=app_id)
 async def restart_app(api_key, app_id):
     client = get_client(api_key)
-    return await client.app_restart(app_id=app_id)
+    return await client.restart_app(app_id=app_id)
 async def delete_app(api_key, app_id):
     client = get_client(api_key)
     app = await client.app(app_id)
     return await app.delete()
 async def upload_app(api_key, zip_path):
     client = get_client(api_key)
-    file = square.File(zip_path)
+    file = squarecloud.File(zip_path)
     return await client.upload_app(file=file)
 async def get_app_logs(api_key, app_id):
     client = get_client(api_key)
-    return await client.app_logs(app_id=app_id)
+    return await client.get_logs(app_id=app_id)
 async def create_backup(api_key, app_id):
     client = get_client(api_key)
-    return await client.app_backup(app_id=app_id)
+    return await client.backup(app_id=app_id)
 async def list_backups(api_key, app_id):
     client = get_client(api_key)
-    return await client.app_backups(app_id=app_id)
+    return await client.all_app_backups(app_id=app_id)
 def get_square_api_key(user_id):
     return user_keys.get(str(user_id))
 def get_payment_manager(guild_id):
@@ -242,7 +242,7 @@ async def key(interaction: discord.Interaction):
             print(f"🔍 Validando chave para usuário {user_id}")
             print(f"🔑 Chave fornecida: {api_key[:10]}...")
             try:
-                client = square.Client(api_key)
+                client = squarecloud.Client(api_key)
                 apps = await client.all_apps()
                 user_keys[user_id] = api_key
                 save_user_keys()
