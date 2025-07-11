@@ -269,6 +269,8 @@ async def key(interaction: discord.Interaction):
 async def deploy(interaction: discord.Interaction):
     user_id = str(interaction.user.id)
     guild_id = str(interaction.guild_id)
+    global ticket_config
+    ticket_config = load_ticket_config()
     category_id = get_guild_ticket_category(guild_id)
     if not category_id:
         embed = discord.Embed(
